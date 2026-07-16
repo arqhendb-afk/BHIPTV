@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="HomeScreen" extends="Group">
+    <interface>
+        <field id="selectedIndex" type="integer" value="0" />
+    </interface>
+    
+    <children>
+        <Rectangle
+            id="bgRect"
+            width="1920"
+            height="1080"
+            color="0x000000FF"
+            translation="[0, 0]" />
+        
+        <Label
+            id="titleLabel"
+            text="BHIPTV"
+            font="font:LargeSystemFont"
+            color="0xFFFFFFFF"
+            translation="[960, 100]"
+            horizAlign="center"
+            vertAlign="top" />
+        
+        <Group id="menuContainer" translation="[960, 350]">
+            <!-- TV Button -->
+            <Rectangle
+                id="tvButtonBg"
+                width="600"
+                height="120"
+                color="0x0066CCFF"
+                translation="[-300, 0]" />
+            
+            <Label
+                id="tvButtonLabel"
+                text="TV"
+                font="font:LargeSystemFont"
+                color="0xFFFFFFFF"
+                translation="[-300, 0]"
+                horizAlign="center"
+                vertAlign="center" />
+            
+            <!-- Películas Button -->
+            <Rectangle
+                id="peliculasButtonBg"
+                width="600"
+                height="120"
+                color="0x444444FF"
+                translation="[-300, 200]" />
+            
+            <Label
+                id="peliculasButtonLabel"
+                text="Películas"
+                font="font:LargeSystemFont"
+                color="0xFFFFFFFF"
+                translation="[-300, 200]"
+                horizAlign="center"
+                vertAlign="center" />
+        </Group>
+    </children>
+    
+    <script type="text/brightscript" uri="pkg:/components/HomeScreen.brs" />
+</component>
