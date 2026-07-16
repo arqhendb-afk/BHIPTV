@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="MoviesScreen" extends="Group">
+    <children>
+        <Rectangle
+            id="bgRect"
+            width="1920"
+            height="1080"
+            color="0x000000FF"
+            translation="[0, 0]" />
+        
+        <Label
+            id="titleLabel"
+            text="Películas"
+            font="font:LargeSystemFont"
+            color="0xFFFFFFFF"
+            translation="[100, 50]"
+            horizAlign="left"
+            vertAlign="top" />
+        
+        <Label
+            id="noMoviesLabel"
+            text="No hay películas disponibles"
+            font="font:SystemFont"
+            color="0x888888FF"
+            translation="[960, 540]"
+            horizAlign="center"
+            vertAlign="center" />
+    </children>
+    
+    <script type="text/brightscript" uri="pkg:/components/MoviesScreen.brs" />
+</component>
