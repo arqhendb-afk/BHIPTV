@@ -1,39 +1,43 @@
 sub init()
     print "HomeScreen - Initializing"
     
-    ' Get UI elements
-    m.tvButtonBg = m.top.findNode("tvButtonBg")
-    m.peliculasButtonBg = m.top.findNode("peliculasButtonBg")
-    m.tvButtonLabel = m.top.findNode("tvButtonLabel")
-    m.peliculasButtonLabel = m.top.findNode("peliculasButtonLabel")
+    ' Get menu item backgrounds and labels
+    m.tvItemBg = m.top.findNode("tvItemBg")
+    m.peliculasItemBg = m.top.findNode("peliculasItemBg")
+    m.configItemBg = m.top.findNode("configItemBg")
     
-    ' Track selected button (0 = TV, 1 = Películas)
+    m.tvItemLabel = m.top.findNode("tvItemLabel")
+    m.peliculasItemLabel = m.top.findNode("peliculasItemLabel")
+    m.configItemLabel = m.top.findNode("configItemLabel")
+    
+    ' Array of menu items for easier management
+    m.menuItems = [
+        { bg: m.tvItemBg, label: m.tvItemLabel, text: "TV" },
+        { bg: m.peliculasItemBg, label: m.peliculasItemLabel, text: "Películas" },
+        { bg: m.configItemBg, label: m.configItemLabel, text: "Configuración" }
+    ]
+    
+    ' Track selected menu item (0 = TV, 1 = Películas, 2 = Configuración)
     m.selectedIndex = 0
     
-    ' Update button styling
-    m.updateButtonStyle()
+    ' Update menu styling
+    m.updateMenuStyle()
     
     print "HomeScreen - Initialization Complete"
 end sub
 
-sub m.updateButtonStyle()
-    ' TV Button
-    if m.selectedIndex = 0
-        m.tvButtonBg.color = "0x0066CCFF"
-        m.tvButtonLabel.color = "0xFFFFFFFF"
-    else
-        m.tvButtonBg.color = "0x444444FF"
-        m.tvButtonLabel.color = "0xCCCCCCFF"
-    end if
-    
-    ' Películas Button
-    if m.selectedIndex = 1
-        m.peliculasButtonBg.color = "0x0066CCFF"
-        m.peliculasButtonLabel.color = "0xFFFFFFFF"
-    else
-        m.peliculasButtonBg.color = "0x444444FF"
-        m.peliculasButtonLabel.color = "0xCCCCCCFF"
-    end if
+sub m.updateMenuStyle()
+    for i = 0 to m.menuItems.count() - 1
+        if i = m.selectedIndex
+            ' Selected item: blue
+            m.menuItems[i].bg.color = "0x0066CCFF"
+            m.menuItems[i].label.color = "0xFFFFFFFF"
+        else
+            ' Unselected item: gray
+            m.menuItems[i].bg.color = "0x666666FF"
+            m.menuItems[i].label.color = "0xCCCCCCFF"
+        end if
+    end for
 end sub
 
 function onKeyEvent(key as string, press as boolean) as boolean
@@ -44,13 +48,13 @@ function onKeyEvent(key as string, press as boolean) as boolean
     if key = "up"
         if m.selectedIndex > 0
             m.selectedIndex = m.selectedIndex - 1
-            m.updateButtonStyle()
+            m.updateMenuStyle()
         end if
         return true
     else if key = "down"
-        if m.selectedIndex < 1
+        if m.selectedIndex < m.menuItems.count() - 1
             m.selectedIndex = m.selectedIndex + 1
-            m.updateButtonStyle()
+            m.updateMenuStyle()
         end if
         return true
     else if key = "ok"
@@ -64,11 +68,6 @@ function onKeyEvent(key as string, press as boolean) as boolean
 end function
 
 sub m.handleSelection()
-    if m.selectedIndex = 0
-        print "HomeScreen - TV selected"
-        ' TODO: Navigate to TvScreen
-    else if m.selectedIndex = 1
-        print "HomeScreen - Películas selected"
-        ' TODO: Navigate to MoviesScreen
-    end if
+    selectedItem = m.menuItems[m.selectedIndex]
+    print "HomeScreen - Selected: " + selectedItem.text
 end sub
