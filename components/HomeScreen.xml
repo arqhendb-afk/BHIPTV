@@ -22,16 +22,16 @@
             vertAlign="top" />
         
         <Group id="menuContainer" translation="[960, 350]">
-            <!-- TV Button -->
+            <!-- TV Menu Item -->
             <Rectangle
-                id="tvButtonBg"
+                id="tvItemBg"
                 width="600"
-                height="120"
+                height="100"
                 color="0x0066CCFF"
                 translation="[-300, 0]" />
             
             <Label
-                id="tvButtonLabel"
+                id="tvItemLabel"
                 text="TV"
                 font="font:LargeSystemFont"
                 color="0xFFFFFFFF"
@@ -39,20 +39,37 @@
                 horizAlign="center"
                 vertAlign="center" />
             
-            <!-- Películas Button -->
+            <!-- Películas Menu Item -->
             <Rectangle
-                id="peliculasButtonBg"
+                id="peliculasItemBg"
                 width="600"
-                height="120"
-                color="0x444444FF"
-                translation="[-300, 200]" />
+                height="100"
+                color="0x666666FF"
+                translation="[-300, 120]" />
             
             <Label
-                id="peliculasButtonLabel"
+                id="peliculasItemLabel"
                 text="Películas"
                 font="font:LargeSystemFont"
                 color="0xFFFFFFFF"
-                translation="[-300, 200]"
+                translation="[-300, 120]"
+                horizAlign="center"
+                vertAlign="center" />
+            
+            <!-- Configuración Menu Item -->
+            <Rectangle
+                id="configItemBg"
+                width="600"
+                height="100"
+                color="0x666666FF"
+                translation="[-300, 240]" />
+            
+            <Label
+                id="configItemLabel"
+                text="Configuración"
+                font="font:LargeSystemFont"
+                color="0xFFFFFFFF"
+                translation="[-300, 240]"
                 horizAlign="center"
                 vertAlign="center" />
         </Group>
