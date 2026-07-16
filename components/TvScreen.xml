@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="TvScreen" extends="Group">
+    <children>
+        <Rectangle
+            id="bgRect"
+            width="1920"
+            height="1080"
+            color="0x000000FF"
+            translation="[0, 0]" />
+        
+        <Label
+            id="titleLabel"
+            text="TV"
+            font="font:LargeSystemFont"
+            color="0xFFFFFFFF"
+            translation="[100, 50]"
+            horizAlign="left"
+            vertAlign="top" />
+        
+        <!-- Left panel: Channel list -->
+        <Rectangle
+            id="leftPanel"
+            width="400"
+            height="980"
+            color="0x1A1A1AFF"
+            translation="[0, 100]" />
+        
+        <Label
+            id="channelListLabel"
+            text="No hay lista cargada"
+            font="font:SystemFont"
+            color="0x888888FF"
+            translation="[200, 550]"
+            horizAlign="center"
+            vertAlign="center" />
+        
+        <!-- Right panel: Video playback placeholder -->
+        <Rectangle
+            id="rightPanel"
+            width="1520"
+            height="980"
+            color="0x000000FF"
+            translation="[400, 100]" />
+        
+        <Label
+            id="videoPlaceholder"
+            text="Selecciona un canal"
+            font="font:SystemFont"
+            color="0x666666FF"
+            translation="[1200, 550]"
+            horizAlign="center"
+            vertAlign="center" />
+    </children>
+    
+    <script type="text/brightscript" uri="pkg:/components/TvScreen.brs" />
+</component>
