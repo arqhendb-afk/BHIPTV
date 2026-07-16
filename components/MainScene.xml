@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="MainScene" extends="Scene">
+    <interface>
+        <field id="backgroundColor" type="string" value="0x000000FF" />
+    </interface>
+    
+    <children>
+        <Rectangle
+            id="bgRect"
+            width="1920"
+            height="1080"
+            translation="[0, 0]">
+        </Rectangle>
+        
+        <Group
+            id="contentGroup"
+            translation="[960, 540]">
+            
+            <Label
+                id="titleLabel"
+                text="BHIPTV"
+                font="font:LargeSystemFont"
+                translation="[0, -80]"
+                horizAlign="center"
+                vertAlign="center" />
+            
+            <Label
+                id="versionLabel"
+                text="Version 0.1"
+                font="font:SystemFont"
+                translation="[0, 80]"
+                horizAlign="center"
+                vertAlign="center" />
+            
+        </Group>
+    </children>
+    
+    <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
+</component>
